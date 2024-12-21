@@ -14,19 +14,23 @@
 		.navbar-expand-lg {
 			width: 100%;
 		}
+
+		span {
+			font-size: 20px;
+		}
 	</style>
 </head>
 
 <header>
-	<!-- Navbar principal -->
+	<!-- Navbar -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
 			<!-- Logo -->
 			<a class="navbar-brand" href="#">
-				<img class ="logo" src="https://static.vecteezy.com/system/resources/previews/006/470/722/original/pet-shop-logo-design-template-modern-animal-icon-label-for-store-veterinary-clinic-hospital-shelter-business-services-flat-illustration-background-with-dog-cat-and-horse-free-vector.jpg" alt="Logo" style="width: 70px; mix-blend-mode: multiply">
+				<img class ="logo" src="https://static.vecteezy.com/system/resources/previews/006/470/722/original/pet-shop-logo-design-template-modern-animal-icon-label-for-store-veterinary-clinic-hospital-shelter-business-services-flat-illustration-background-with-dog-cat-and-horse-free-vector.jpg" alt="Logo" style="width: 70px; mix-blend-mode: multiply" id="logo">
 			</a>
 
-			<!-- CEP e editar -->
+			<!-- CEP -->
 			<div class="d-flex flex-column mx-3">
 				<span>A entrega será feita em <strong>12345-678</strong></span>
 				<div class="d-flex align-items-center mt-1">
@@ -38,7 +42,7 @@
 				</div>
 			</div>
 
-			<!-- Barra de pesquisa -->
+			<!-- Searchbar -->
 			<form class="d-flex me-3">
 				<div class="input-group">
 					<select class="form-select w-auto" id="categorySelect">
@@ -51,7 +55,7 @@
 				</div>
 			</form>
 
-			<!-- Opções de login e links -->
+			<!-- Login and Links -->
 			<div class="d-flex align-items-center ms-auto me-5">
 				<div class="btn-group">
 					<button type="button" class="btn btn-success">Login</button>
@@ -68,7 +72,7 @@
 				<a href="#" class="btn btn-link text-decoration-none">Devoluções</a>
 				<a href="#" class="btn btn-link text-decoration-none">Pedidos</a>
 
-				<!-- Carrinho de compras -->
+				<!-- Cart -->
 				<a href="#" class="btn btn-success d-flex justify-content-end align-items-center ms-3">
 					<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
 						<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
@@ -78,7 +82,7 @@
 		</div>
 	</nav>
 
-	<!-- Modal para editar CEP -->
+	<!-- Modal for Edit Cep -->
 	<div class="modal fade" id="editCepModal" tabindex="-1" aria-labelledby="editCepModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -97,7 +101,7 @@
 		</div>
 	</div>
 
-	<!-- Barra abaixo da navbar -->
+	<!-- Bar below Navbar -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-success mt-3">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">Mais Vendidos</a>
@@ -127,7 +131,7 @@
 					<div class="card-body p-4">
 						<div class="text-center">
 							<!-- Product name-->
-							<h5 class="fw-bolder">Alimentador Automático Cães Gatos Pets Programável Smart, Tuya WIFI.</h5>
+							<h5 class="fw-bolder">Alimentador Automático Cães Gatos Pets Programável Smart, Tuya WIFI</h5>
 							<!-- Product reviews-->
 							<div class="d-flex justify-content-center small text-warning mb-2">
 								<div class="bi-star-fill"></div>
@@ -138,7 +142,7 @@
 							</div>
 							<!-- Product price-->
 							<span class="text-muted text-decoration-line-through">R$339.00</span>
-							R$279.19
+							<span class="text-bg-warning">R$279.19</span>
 						</div>
 					</div>
 					<!-- Product actions-->
@@ -151,14 +155,14 @@
 			<div class="col mb-5">
 				<div class="card h-100">
 					<!-- Sale badge-->
-					<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+					<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Promoção!</div>
 					<!-- Product image-->
-					<img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+					<img class="card-img-top" href="produto-alimentador-automatico-caes-gatos-pets-programavel-smart-tuya-wifi.html" src="https://m.media-amazon.com/images/I/61B9WHDAlFL._AC_SX679_.jpg" alt="..." />
 					<!-- Product details-->
 					<div class="card-body p-4">
 						<div class="text-center">
 							<!-- Product name-->
-							<h5 class="fw-bolder">Special Item</h5>
+							<h5 class="fw-bolder">Bebedouro Automático Para Animais de Estimação, Gatos e Cães (2.6 USB)</h5>
 							<!-- Product reviews-->
 							<div class="d-flex justify-content-center small text-warning mb-2">
 								<div class="bi-star-fill"></div>
@@ -168,8 +172,8 @@
 								<div class="bi-star-fill"></div>
 							</div>
 							<!-- Product price-->
-							<span class="text-muted text-decoration-line-through">R$20.00</span>
-							R$18.00
+							<span class="text-muted text-decoration-line-through">R$229.99</span>
+							<span class="text-bg-warning">R$209.99</span>
 						</div>
 					</div>
 					<!-- Product actions-->
@@ -182,17 +186,17 @@
 			<div class="col mb-5">
 				<div class="card h-100">
 					<!-- Sale badge-->
-					<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+					<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Promoção!</div>
 					<!-- Product image-->
-					<img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+					<img class="card-img-top" src="https://m.media-amazon.com/images/I/618IfwcrGlL._AC_SY879_.jpg" alt="..." />
 					<!-- Product details-->
 					<div class="card-body p-4">
 						<div class="text-center">
 							<!-- Product name-->
-							<h5 class="fw-bolder">Sale Item</h5>
+							<h5 class="fw-bolder">Comedouro Elevado Triplo Para Cães e Gatos - Tamanho P</h5>
 							<!-- Product price-->
-							<span class="text-muted text-decoration-line-through">$50.00</span>
-							$25.00
+							<span class="text-muted text-decoration-line-through">R$75.00</span>
+							<span class="text-bg-warning">R$49.99</span>
 						</div>
 					</div>
 					<!-- Product actions-->
@@ -205,12 +209,12 @@
 			<div class="col mb-5">
 				<div class="card h-100">
 					<!-- Product image-->
-					<img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+					<img class="card-img-top" src="https://m.media-amazon.com/images/I/61aAEjhy-SL._AC_SL1000_.jpg" alt="..." />
 					<!-- Product details-->
 					<div class="card-body p-4">
 						<div class="text-center">
 							<!-- Product name-->
-							<h5 class="fw-bolder">Popular Item</h5>
+							<h5 class="fw-bolder">Escova Pet Para Cães e Gatos A Vapor 3 Em 1 - Autolimpante, Massagem e Remoção de Pelos - Recarregável (contém cabo)</h5>
 							<!-- Product reviews-->
 							<div class="d-flex justify-content-center small text-warning mb-2">
 								<div class="bi-star-fill"></div>
@@ -220,7 +224,7 @@
 								<div class="bi-star-fill"></div>
 							</div>
 							<!-- Product price-->
-							$40.00
+							<span class="text-body-primary">R$32.90</span>
 						</div>
 					</div>
 					<!-- Product actions-->
@@ -232,18 +236,23 @@
 			</div>
 			<div class="col mb-5">
 				<div class="card h-100">
-					<!-- Sale badge-->
-					<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
 					<!-- Product image-->
-					<img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+					<img class="card-img-top" id="imagem-tapete-gelado-refrescante-homepet-para-Cães-e-Gatos-Tamanho-P-40-x-50cm" src="https://m.media-amazon.com/images/I/61UVz-eHGcL._AC_SY879_.jpg" alt="" style="cursor: pointer;"/>
 					<!-- Product details-->
 					<div class="card-body p-4">
 						<div class="text-center">
 							<!-- Product name-->
-							<h5 class="fw-bolder">Sale Item</h5>
+							<h5 class="fw-bolder">Tapete Gelado Refrescante HomePet para Cães e Gatos Tamanho P 40 x 50cm Fácil de Limpar, Portátil e Dobrável, Ideal para Dias Quentes </h5>
+							<!-- Product reviews-->
+							<div class="d-flex justify-content-center small text-warning mb-2">
+								<div class="bi-star-fill"></div>
+								<div class="bi-star-fill"></div>
+								<div class="bi-star-fill"></div>
+								<div class="bi-star-fill"></div>
+								<div class="bi-star-fill"></div>
+							</div>
 							<!-- Product price-->
-							<span class="text-muted text-decoration-line-through">$50.00</span>
-							$25.00
+							<span class="text-body-primary">R$36.90</span>
 						</div>
 					</div>
 					<!-- Product actions-->

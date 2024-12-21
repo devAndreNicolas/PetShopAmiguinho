@@ -1,6 +1,10 @@
-document.getElementById('imagem-produto-alimentador-automatico-caes-gatos-pets-programavel-smart-tuya-wifi').addEventListener('click', function() {
-    window.location.href = 'produto-alimentador-automatico-caes-gatos-pets-programavel-smart-tuya-wifi.html';  // Altere para o caminho do arquivo HTML desejado
-});
+function goToPage(elementId, destinyPage) {
+    document.getElementById(elementId).addEventListener('click', function() {
+        window.location.href = destinyPage;  // Altere para o caminho do arquivo HTML desejado
+    });
+}
+goToPage('logo', 'index.html')
+goToPage('imagem-produto-alimentador-automatico-caes-gatos-pets-programavel-smart-tuya-wifi', 'racoes-produto-alimentador-automatico-caes-gatos-pets-programavel-smart-tuya-wifi.html');
 
 function changeImage(event, src) {
     document.getElementById('mainImage').src = src;

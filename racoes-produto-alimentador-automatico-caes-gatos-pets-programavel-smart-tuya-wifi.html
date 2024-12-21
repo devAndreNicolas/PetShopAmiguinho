@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alimentador Automático Cães Gatos Pets Programável Smart, Tuya WIFI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Sans,system-ui;
+      .product-image {
+        max-height: 400px;
+        object-fit: cover;
+      }
+      .thumbnail {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        cursor: pointer;
+        opacity: 0.6;
+        transition: opacity 0.3s ease;
+      }
+      .thumbnail:hover, .thumbnail.active {
+        opacity: 1;
+      }
+    }
+    @keyframes pulse {
+      0% {transform: scale(1);}
+      50% {transform: scale(1.1);}
+      100% {transform: scale(1);}
+    }
+    .btn-Comprar-Agora {
+      animation: pulse 2s infinite;
+    }
+
+    </style>
+</head>
+
+<header>
+  <!-- Navbar principal -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <!-- Logo -->
+      <a class="navbar-brand" href="#">
+        <img class ="logo" src="https://static.vecteezy.com/system/resources/previews/006/470/722/original/pet-shop-logo-design-template-modern-animal-icon-label-for-store-veterinary-clinic-hospital-shelter-business-services-flat-illustration-background-with-dog-cat-and-horse-free-vector.jpg" alt="Logo" style="width: 70px; mix-blend-mode: multiply" id="logo">
+      </a>
+
+      <!-- CEP e editar -->
+      <div class="d-flex flex-column mx-3">
+        <span>A entrega será feita em <strong>12345-678</strong></span>
+        <div class="d-flex align-items-center mt-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+            <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+            <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+          </svg>
+          <a href="#" class="ms-2 text-decoration-none" data-bs-toggle="modal" data-bs-target="#editCepModal">Editar CEP</a>
+        </div>
+      </div>
+
+      <!-- Barra de pesquisa -->
+      <form class="d-flex me-3">
+        <div class="input-group">
+          <select class="form-select w-auto" id="categorySelect">
+            <option value="1">Rações</option>
+            <option value="2">Brinquedos</option>
+            <option value="3">Acessórios</option>
+            <option value="4">Saúde & Higiene</option>
+          </select>
+          <input type="text" class="form-control w-100 w-sm-50" placeholder="O que você procura?" aria-label="Pesquisar">
+        </div>
+      </form>
+
+      <!-- Opções de login e links -->
+      <div class="d-flex align-items-center ms-auto me-5">
+        <div class="btn-group">
+          <button type="button" class="btn btn-success">Login</button>
+          <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Dropdown</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Fazer Login</a></li>
+            <li><a class="dropdown-item" href="#">Criar Conta</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Esqueceu a Senha</a></li>
+          </ul>
+        </div>
+        <a href="#" class="btn btn-link text-decoration-none">Devoluções</a>
+        <a href="#" class="btn btn-link text-decoration-none">Pedidos</a>
+
+        <!-- Carrinho de compras -->
+        <a href="#" class="btn btn-success d-flex justify-content-end align-items-center ms-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Modal para editar CEP -->
+  <div class="modal fade" id="editCepModal" tabindex="-1" aria-labelledby="editCepModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editCepModalLabel">Editar CEP</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" class="form-control" placeholder="Digite o novo CEP">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barra abaixo da navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success mt-3">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Mais Vendidos</a>
+      <div class="d-flex flex-wrap">
+        <a href="#" class="btn btn-link text-white text-decoration-none">Rações</a>
+        <a href="#" class="btn btn-link text-white text-decoration-none">Brinquedos</a>
+        <a href="#" class="btn btn-link text-white text-decoration-none">Acessórios</a>
+        <a href="#" class="btn btn-link text-white text-decoration-none">Saúde & Higiene</a>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+<body>
+<section class="py-5">
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Product Images -->
+      <div class="col-md-6 mb-4">
+        <img src="https://m.media-amazon.com/images/I/61QHexxYp3L._AC_SX679_.jpg" alt="Product" class="img-fluid rounded mb-3 product-image" id="mainImage">
+        <div class="d-flex justify-content-between">
+          <img src="https://m.media-amazon.com/images/I/61QHexxYp3L._AC_SX679_.jpg" alt="Thumbnail 1" class="thumbnail rounded active" onclick="changeImage(event, this.src)">
+          <img src="https://m.media-amazon.com/images/I/71LfKA-Dj0L._AC_SY879_.jpg" alt="Thumbnail 2" class="thumbnail rounded" onclick="changeImage(event, this.src)">
+          <img src="https://m.media-amazon.com/images/I/71z+77orKuL._AC_SY879_.jpg" alt="Thumbnail 3" class="thumbnail rounded" onclick="changeImage(event, this.src)">
+          <img src="https://m.media-amazon.com/images/I/61HvJJlGjSL._AC_SY879_.jpg" alt="Thumbnail 4" class="thumbnail rounded" onclick="changeImage(event, this.src)">
+          <img src="https://m.media-amazon.com/images/I/61NXTvXIOrL._AC_SY879_.jpg" alt="Thumbnail 5" class="thumbnail rounded" onclick="changeImage(event, this.src)">
+        </div>
+      </div>
+
+      <!-- Product Details -->
+      <div class="col-md-6">
+        <h2 class="mb-3">Alimentador Automático Cães Gatos Pets Programável Smart, Tuya WIFI</h2>
+        <div class="mb-3">
+          <span class="h4 me-2">R$ 279.19</span>
+          <span class="text-muted"><s>R$339.00</s></span>
+        </div>
+        <div class="mb-3">
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-half text-warning"></i>
+          <span class="ms-2">4.5 (120 reviews)</span>
+        </div>
+        <p class="mb-4">Alimentador Automático para Cães e Gatos 4L, programável via Wi-Fi com integração Tuya Smart.
+          Dispensador inteligente que permite agendar as refeições do seu pet, proporcionando praticidade e
+          controle remoto para alimentação de cães e gatos. Ideal para manter a alimentação do seu animal sempre pontual e sem complicação.</p>
+        <div class="mb-4">
+          <label for="quantity" class="form-label">Quantidade:</label>
+          <input type="number" class="form-control" id="quantity" value="1" min="1" style="width: 80px;">
+        </div>
+        <button class="btn btn-success btn-lg mb-3 me-2 btn-Comprar-Agora">
+          <i class="bi bi-cart-plus"></i> Comprar Agora
+        </button>
+        <button class="btn btn-outline-dark btn-lg mb-3">
+          <i class="bi bi-heart"></i> Adicionar à lista de desejos
+        </button>
+        <div class="mt-4">
+          <h5>Sobre este item:</h5>
+          <ul>
+            <li>Novo 4L Alimentador Pet Cat Dog Smart Food Dispenser Alimentação Quantitativa Regular Com Gravação De Áudio Alimentação Automática Pet Supplies</li>
+            <li>【Personalize o tempo de alimentação e a quantidade】Este alimentador automático fornece tamanho flexível de refeição, 1 a 40 porções por refeição, cada porção é de cerca de 5g e a capacidade do recipiente é de 4L.</li>
+            <li>Com gravador de voz e alto-falante, este alimentador pode gravar sua voz por 12 segundos para chamar seu filhote ou gatinho para comer. Sua voz pessoal impedirá seu animal de estimação de ficar sozinho e perder uma refeição quando a comida estiver pronta.</li>
+            <li>APP da Tuya: Baixe o aplicativo Tuya gratuitamente. Sua rede WiFi doméstica precisa ter uma frequência de 2,4 GHz para que o alimentador de animais funcione.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- Section for Similar Products -->
+<section class="py-5">
+  <div class="container mt-5">
+    <h3 class="mb-4">Produtos Similares</h3>
+    <!-- Grid of 5 similar products -->
+    <div class="row">
+      <!-- Product 1 -->
+      <div class="col-3 mb-5 ">
+        <div class="product-card">
+          <img src="https://m.media-amazon.com/images/I/61QHexxYp3L._AC_SX679_.jpg" class="card-img-top" alt="Produto 1">
+          <div class="product-card-body">
+            <h5 class="card-title">Alimentador Automático 1</h5>
+            <p class="card-text">R$279.99</p>
+          </div>
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <div class="text-center"><a class="btn btn-success mt-auto m-3" id="comprar-agora-button" href="#">Comprar agora</a></div>
+            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Adicionar ao carrinho</a></div>
+          </div>
+        </div>
+      </div>
+      <!-- Product 2 -->
+      <div class="col-3 mb-5">
+        <div class="product-card">
+          <img src="https://m.media-amazon.com/images/I/61QHexxYp3L._AC_SX679_.jpg" class="card-img-top" alt="Produto 2">
+          <div class="product-card-body">
+            <h5 class="card-title">Alimentador Automático 2</h5>
+            <p class="card-text">R$259.99</p>
+          </div>
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <div class="text-center"><a class="btn btn-success mt-auto m-3" id="comprar-agora-button" href="#">Comprar agora</a></div>
+            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Adicionar ao carrinho</a></div>
+          </div>
+        </div>
+      </div>
+      <!-- Product 3 -->
+      <div class="col-3 mb-5">
+        <div class="product-card">
+          <img src="https://m.media-amazon.com/images/I/61QHexxYp3L._AC_SX679_.jpg" class="card-img-top" alt="Produto 3">
+          <div class="product-card-body">
+            <h5 class="card-title">Alimentador Automático 3</h5>
+            <p class="card-text">R$319.99</p>
+          </div>
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <div class="text-center"><a class="btn btn-success mt-auto m-3" id="comprar-agora-button" href="#">Comprar agora</a></div>
+            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Adicionar ao carrinho</a></div>
+          </div>
+        </div>
+      </div>
+      <!-- Product 4 -->
+      <div class="col-3 mb-5">
+        <div class="product-card">
+          <img src="https://m.media-amazon.com/images/I/61QHexxYp3L._AC_SX679_.jpg" class="card-img-top" alt="Produto 4">
+          <div class="product-card-body">
+            <h5 class="card-title">Alimentador Automático 4</h5>
+            <p class="card-text">R$349.99</p>
+          </div>
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <div class="text-center"><a class="btn btn-success mt-auto m-3" id="comprar-agora-button" href="#">Comprar agora</a></div>
+            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Adicionar ao carrinho</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="src/js/script.js"></script>
+</body>
+</html>
